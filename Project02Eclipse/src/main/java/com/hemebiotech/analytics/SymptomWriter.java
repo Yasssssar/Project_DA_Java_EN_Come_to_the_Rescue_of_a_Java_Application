@@ -5,13 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class WriteSymptomDataToFile {
+public class SymptomWriter implements ISymptomWriter {
 
     /**
      *
      * @param symptomMap : TreeMap contenant la liste des symptomes
      */
-    public void writeSymptomDataSet(Map<String,Integer> symptomMap) {
+    @Override
+    public void writeSymptomDataSet(Map<String, Integer> symptomMap) {
 
 
         try(FileWriter writer = new FileWriter("result.out");

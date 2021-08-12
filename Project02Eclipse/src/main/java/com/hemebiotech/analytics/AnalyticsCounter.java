@@ -3,17 +3,18 @@ package main.java.com.hemebiotech.analytics;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class AnalyticsCounter {
+public class AnalyticsCounter implements IAnalyticsCounter{
 
-	public static Map<String,Integer> symptomMap;
+	private Map<String,Integer> symptomMap;
 
 	/**
 	 *
 	 * @param args : prend en parametre le fichier de symptom afin de produire le fichier result.out
 	 */
-	public static void count(String args[]) {
+	@Override
+	public void count(String args[]) {
 		symptomMap = new TreeMap<>();
-		ReadSymptomDataFromFile r = new ReadSymptomDataFromFile(args[0]);
+		ISymptomReader r = new ReadSymptomDataFromFile(args[0]);
 
 		r.getSymptoms().stream()
 				.forEach(symptom -> {
@@ -22,7 +23,7 @@ public class AnalyticsCounter {
 				});
 
 		if(!symptomMap.isEmpty()) {
-			WriteSymptomDataToFile writeSymptomDataSet = new WriteSymptomDataToFile();
+			SymptomWriter writeSymptomDataSet = new SymptomWriter();
 			writeSymptomDataSet.writeSymptomDataSet(symptomMap);
 		}
 	}
