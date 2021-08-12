@@ -14,7 +14,7 @@ public class AnalyticsCounter implements IAnalyticsCounter{
 	@Override
 	public void count(String args[]) {
 		symptomMap = new TreeMap<>();
-		ISymptomReader r = new ReadSymptomDataFromFile(args[0]);
+		ReadSymptomDataFromFile r = new ReadSymptomDataFromFile(args[0]);
 
 		r.getSymptoms().stream()
 				.forEach(symptom -> {
