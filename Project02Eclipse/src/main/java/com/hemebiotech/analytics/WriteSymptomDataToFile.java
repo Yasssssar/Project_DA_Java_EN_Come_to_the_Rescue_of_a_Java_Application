@@ -7,16 +7,20 @@ import java.util.Map;
 
 public class WriteSymptomDataToFile {
 
-    public void writeSymptomDataSet(Map<String,Integer> symptomMap) throws IOException {
-        FileWriter writer = new FileWriter("result.out");
-        BufferedWriter bufferedWriter = new BufferedWriter(writer);
+    public void writeSymptomDataSet(Map<String,Integer> symptomMap) {
 
-        for (var input : symptomMap.entrySet()) {
-            bufferedWriter.write(input.getKey()+","+input.getValue());
-            bufferedWriter.newLine();
+
+        try(FileWriter writer = new FileWriter("result.out");
+            BufferedWriter bufferedWriter = new BufferedWriter(writer))
+        {
+            for (var input : symptomMap.entrySet()) {
+                bufferedWriter.write(input.getKey()+","+input.getValue());
+                bufferedWriter.newLine();
+            }
+            System.out.println("INFO : Le fichier result.out a bien été produit");
+        } catch (IOException e) {
+            System.out.println("ERROR : Un probleme est survenue lors de l'ecriture du fichier de resultat");
         }
-
-        bufferedWriter.close();
     }
 
 
