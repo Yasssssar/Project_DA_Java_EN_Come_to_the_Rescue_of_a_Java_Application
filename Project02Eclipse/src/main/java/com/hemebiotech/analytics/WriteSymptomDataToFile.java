@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class WriteSymptomDataToFile {
 
+    /**
+     *
+     * @param symptomMap : TreeMap contenant la liste des symptomes
+     */
     public void writeSymptomDataSet(Map<String,Integer> symptomMap) {
 
 

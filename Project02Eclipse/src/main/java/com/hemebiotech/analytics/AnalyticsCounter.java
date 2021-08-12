@@ -6,7 +6,11 @@ import java.util.TreeMap;
 public class AnalyticsCounter {
 
 	public static Map<String,Integer> symptomMap;
-	
+
+	/**
+	 *
+	 * @param args : prend en parametre le fichier de symptom afin de produire le fichier result.out
+	 */
 	public static void count(String args[]) {
 		symptomMap = new TreeMap<>();
 		ReadSymptomDataFromFile r = new ReadSymptomDataFromFile(args[0]);
