@@ -6,11 +6,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * la classe ReadSymptomDataFromFile lit un fichier et renvoie une liste de data
+ */
 
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
+	/**
+	 * le chemin du fichier a lire
+	 */
 	private String filepath;
 
+	/**
+	 * Constructeur
+	 * @param filepath :  le chemin du fichier a lire
+	 */
 	ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
 	}

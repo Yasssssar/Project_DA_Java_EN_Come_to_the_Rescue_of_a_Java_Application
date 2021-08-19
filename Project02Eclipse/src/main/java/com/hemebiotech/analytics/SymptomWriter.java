@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * classe SymptomWriter ecrit les symptomes dans un fichier result.out
+ */
 public class SymptomWriter implements ISymptomWriter {
 
     /**

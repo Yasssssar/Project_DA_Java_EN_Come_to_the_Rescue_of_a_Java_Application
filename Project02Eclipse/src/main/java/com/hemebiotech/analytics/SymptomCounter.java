@@ -3,8 +3,14 @@ package main.java.com.hemebiotech.analytics;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class AnalyticsCounter implements IAnalyticsCounter{
+	/**
+ 	* La classe SymptomCounter compte le nombre de symptome dans un fichier
+ 	*/
+public class SymptomCounter implements IAnalyticsCounter{
 
+		/**
+		 * Map contenant tout les symptomes trouvé dans un fichier ainsi que le nombre.
+		 */
 	private Map<String,Integer> symptomMap;
 
 	/**

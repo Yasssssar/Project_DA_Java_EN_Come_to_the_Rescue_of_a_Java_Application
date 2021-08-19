@@ -2,6 +2,9 @@ package main.java.com.hemebiotech.analytics;
 
 import java.util.Map;
 
+/**
+ * Interface ISymptomWriter permettant d'écrire le fichier resultat
+ */
 public interface ISymptomWriter {
     /**
      *
